@@ -1,7 +1,10 @@
 import BtnMobile from "@/components/MobileMenu/BtnMobile";
 import {View} from "react-native";
+import {useState} from "react";
 
 export default function MobileMenu() {
+    const [isActive, setIsActive] = useState(true);
+
     return (
         <View style={{
             paddingTop: 80,
@@ -10,7 +13,8 @@ export default function MobileMenu() {
             display: "flex",
             alignItems: "flex-end",
         }}>
-            <BtnMobile/>
+            <BtnMobile isActive={isActive}
+                       setIsActive={setIsActive}/>
         </View>
     );
 }
