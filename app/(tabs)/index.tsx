@@ -1,9 +1,13 @@
 import React from "react";
-import {Text} from "react-native";
+import { Text, View } from "react-native";
+import Timer from "../../components/Timer";
 
 const YourApp = () => {
     return (
-        <Text style={{fontSize: "24px"}}>Try editing me! 🎉</Text>
+        <View>
+            <Text style={{fontSize: 24, color: "white"}}>Try editing me! 🎉</Text>
+            <Timer />
+        </View>
     ); 
 };
 
