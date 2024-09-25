@@ -17,11 +17,10 @@ const styles = StyleSheet.create({
       marginBottom: 24,
     },
     header: {
-        borderTopWidth: 0.5,
-        borderTopColor: 'lightgrey',
         fontSize: 16,
         fontWeight: 'medium',
-        paddingLeft: 16,
+        marginTop: 8,
+        marginLeft: 16,
         height: 36,
         alignContent: "center",
     },

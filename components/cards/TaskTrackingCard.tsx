@@ -1,23 +1,24 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Card from './Card'
+import ImportanceTag from '../tags/ImportanceTag';
 
 const styles = StyleSheet.create({
-    footer: {padding: 16},
+    footer: {margin: 16},
     date: {fontSize: 12, color: 'grey'},
 });
 
-function TaskTracking() {
+function TaskTracking({date, title, importanceLevel}: {date: string, title: string, importanceLevel: number}) {
   return (
     <Card>
-        <Card.Header title="Corriger examens Wordpress"></Card.Header>
+        <Card.Header title={title}></Card.Header>
         <Card.Body>
             <View>
-                
+                <ImportanceTag importanceLevel={importanceLevel}></ImportanceTag>
             </View>
         </Card.Body>
         <Card.Footer style={styles.footer}>
-            <Text style={styles.date}>20 février 2024</Text>
+            <Text style={styles.date}>{date}</Text>
         </Card.Footer>
     </Card>
   )

@@ -15,7 +15,7 @@ const YourApp = () => {
                               title="Open Classrooms"></Organization>
                 <Organization imageSrc="https://s3-eu-west-1.amazonaws.com/assets.atout-on-line.com/images/ingenieur/Logos_Ecoles/2022_2025/cesi-300.jpg"
                               title="CESI"></Organization>
-                <TaskTracking></TaskTracking>
+                <TaskTracking date="20 février 2024" title="Corriger examens Wordpress" importanceLevel={2}></TaskTracking>
                 <Timer/>
             </ScrollView>
         </>
