@@ -1,7 +1,7 @@
 import TitlePage from "@/components/Titles/TitlePage";
 
-export default function TasksPage() {
+export default function SitemapPage() {
     return (
-        <TitlePage title="Tâches"/>
+        <TitlePage title="Sitemap"/>
     );
 }

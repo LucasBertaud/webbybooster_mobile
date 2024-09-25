@@ -2,7 +2,7 @@ import React from "react";
 import {Text} from "react-native";
 
 export default function TabLayout() {
-  return (
-      <Text>Lol</Text>
-  );
+    return (
+        <Text>Lol</Text>
+    );
 }
