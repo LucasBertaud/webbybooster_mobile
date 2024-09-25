@@ -1,10 +1,16 @@
+import Organization from '@/entities/organization';
 import React from 'react';
 import {Text, View} from 'react-native';
-import ActionSheet from 'react-native-actions-sheet';
+import ActionSheet, { ActionSheetProps } from 'react-native-actions-sheet';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-function DrawUnderStatusBar() {
+function OrganizationDrawer(props: ActionSheetProps<"organization-drawer">) {
   const insets = useSafeAreaInsets();
+  const payload: any = props.payload;
+  if(!payload) return null;
+  const organization: Organization = payload.organization;
+  if(!organization) return null;
+
   return (
     <ActionSheet
       indicatorStyle={{
@@ -22,16 +28,10 @@ function DrawUnderStatusBar() {
           justifyContent: 'center',
           height: '100%',
         }}>
-        <Text
-          style={{
-            color: 'black',
-            fontSize: 30,
-          }}>
-          I draw under status bar!
-        </Text>
+        <Text>{organization.getName()}</Text>
       </View>
     </ActionSheet>
   );
 }
 
-export default DrawUnderStatusBar;
+export default OrganizationDrawer;

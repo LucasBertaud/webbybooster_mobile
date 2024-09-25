@@ -12,7 +12,7 @@ const OrganizationCard = ({id}: {id: number}) => {
   const image = {uri: organization.getLogo()};
 
   return (
-      <Card action={() => SheetManager.show("drawer-under-status-bar", 
+      <Card action={() => SheetManager.show("organization-drawer", 
         { payload: {
           organization: organization
         }

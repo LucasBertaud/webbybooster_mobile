@@ -1,12 +1,12 @@
 import {registerSheet, SheetDefinition} from 'react-native-actions-sheet';
-import DrawUnderStatusBar from './DrawerUnderStatusBar';
+import OrganizationDrawer from './OrganizationDrawer';
 import Organization from '@/entities/organization';
 
-registerSheet('drawer-under-status-bar', DrawUnderStatusBar);
+registerSheet('organization-drawer', OrganizationDrawer);
 
 declare module 'react-native-actions-sheet' {
   interface Sheets {
-    'drawer-under-status-bar': SheetDefinition<{
+    'organization-drawer': SheetDefinition<{
         payload: {
           organization: Organization;
         }
