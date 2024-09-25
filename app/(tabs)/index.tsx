@@ -1,7 +1,6 @@
 import React from "react";
 import Timer from "@/components/Timer";
 import {Animated} from "react-native";
-import ContactCard from "@/components/cards/ContactCard";
 import {SheetProvider} from "react-native-actions-sheet";
 import "@/components/drawers/sheets";
 import OrganizationCard from "@/components/cards/OrganizationCard";
@@ -10,6 +9,7 @@ import WhoAmI from "@/components/WhoAmI";
 import TitlePage from "@/components/Titles/TitlePage";
 import ScrollView = Animated.ScrollView;
 import TaskTrackingCard from "@/components/cards/TaskTrackingCard";
+import ContactCard from "@/components/cards/ContactCard";
 
 const image = {uri: "https://blog.openclassrooms.com/wp-content/uploads/2018/05/OC.png"};
 
@@ -23,8 +23,8 @@ const YourApp = () => {
                 <TaskTrackingCard id={1}></TaskTrackingCard>
                 <ContactCard id={1}/>
                 <Timer/>
-                <WhoAmI/>
                 <Shortcuts/>
+                <WhoAmI/>
             </ScrollView>
         </SheetProvider>
     );

@@ -17,7 +17,7 @@ const Shortcuts = () => {
     };
 
     return (
-        <View style={styles.container}>
+        <View>
             <TitlePage title="Raccourcis"/>
             {showInput && (
                 <View style={styles.inputContainer}>
@@ -50,9 +50,6 @@ const Shortcuts = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        padding: 20,
-    },
     addButton: {
         backgroundColor: "#4a3228",
         padding: 10,
@@ -63,6 +60,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginVertical: 10,
         alignSelf: "flex-end",
+        marginRight: 10,
     },
     inputContainer: {
         flexDirection: "row",

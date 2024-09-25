@@ -5,10 +5,12 @@ import ContactDrawer from './ContactDrawer';
 import Contact from '@/entities/contact';
 import TaskTracking from '@/entities/task_tracking';
 import TaskTrackingDrawer from './TaskTrackingDrawer';
+import SessionDrawer from './SessionDrawer';
 
 registerSheet('organization-drawer', OrganizationDrawer);
 registerSheet('contact-drawer', ContactDrawer);
 registerSheet('task-tracking-drawer', TaskTrackingDrawer);
+registerSheet('session-drawer', SessionDrawer); 
 
 declare module 'react-native-actions-sheet' {
   interface Sheets {
@@ -27,7 +29,8 @@ declare module 'react-native-actions-sheet' {
         taskTracking: TaskTracking;
       }
   }>;
+  'session-drawer': SheetDefinition;
   }
 }
- 
+
 export {};
