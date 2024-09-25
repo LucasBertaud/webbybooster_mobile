@@ -1,9 +1,7 @@
-import {Text, View} from "react-native";
+import TitlePage from "@/components/Titles/TitlePage";
 
 export default function ContactPage() {
     return (
-        <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-            <Text>Contact</Text>
-        </View>
+        <TitlePage title="Contacts"/>
     );
 }

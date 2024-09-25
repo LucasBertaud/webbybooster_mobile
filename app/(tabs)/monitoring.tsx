@@ -1,9 +1,7 @@
-import {Text, View} from "react-native";
+import TitlePage from "@/components/Titles/TitlePage";
 
 export default function MonitoringPage() {
     return (
-        <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-            <Text>Suivi CA</Text>
-        </View>
+        <TitlePage title="Suivi CA"/>
     );
 }
