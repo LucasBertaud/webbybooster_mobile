@@ -25,7 +25,7 @@ function OrganizationDrawer(props: ActionSheetProps<"organization-drawer">) {
       safeAreaInsets={insets}
       drawUnderStatusBar
       containerStyle={{
-        height: '90%',
+        
       }}>
         <View style={Drawers.container}>
           <Text style={Drawers.h1}>{organization.getName()}</Text>

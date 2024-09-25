@@ -1,16 +1,27 @@
 import React from 'react'
 import {Image, StyleSheet, Text} from "react-native";
 import Card from "./Card";
+import Contact from '@/entities/contact';
+import { ContactsMock } from '@/mock/contact_mock';
+import { SheetManager } from 'react-native-actions-sheet';
 
-function ContactCard({title, imageSrc}: {title: string, imageSrc?: string}) {
-    const image = {uri: imageSrc};
+function ContactCard({id}: {id: number}) {
+    const contact : Contact | undefined = ContactsMock.find((contact: any) => contact.id === id);
+
+    if (!contact) return null;
+
+    const image = {uri: contact.getPhoto()};
   return (
-    <Card>
+    <Card action={() => SheetManager.show("contact-drawer", 
+        { payload: {
+          contact: contact
+        }
+      })}>
         <Card.Body>
             <Image style={styles.logo} source={image}></Image>
         </Card.Body>
         <Card.Footer>
-            <Text style={styles.footer}>{title}</Text>
+            <Text style={styles.footer}>{contact.getName()}</Text>
         </Card.Footer>
     </Card>
   )

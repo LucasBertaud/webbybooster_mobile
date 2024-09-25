@@ -38,7 +38,7 @@ function ContactDrawer(props: ActionSheetProps<"organization-drawer">) {
       safeAreaInsets={insets}
       drawUnderStatusBar
       containerStyle={{
-        height: '70%',
+        
       }}>
         <View style={Drawers.container}>
             <Text style={Drawers.h1}>{contact.getName()}</Text>
