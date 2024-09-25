@@ -15,9 +15,10 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "#ba856f",
         backgroundColor: "#4a3228",
-        padding: 10,
+        padding: 12,
+        marginRight: 12,
+        marginLeft: 12,
         textAlign: "center",
-        borderRadius: 5,
         fontFamily: "Lyon-Text, Georgia, ui-serif, serif",
     },
 });
