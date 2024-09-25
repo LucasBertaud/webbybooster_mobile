@@ -1,28 +1,40 @@
-import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
+import {Image, StyleSheet, Text} from "react-native";
 import Card from "./Card";
+import { SheetManager } from "react-native-actions-sheet";
+import { OrganizationsMock } from "@/mock/organizations_mock";
+import Organization from "@/entities/organization";
 
-const Organization = ({title, imageSrc}: {title: string, imageSrc: string}) => {
-    const image = {uri: imageSrc};
-    return (
-        <Card>
-            <Card.Body>
-                <Image style={styles.logo} source={image}></Image>
-            </Card.Body>
-            <Card.Footer>
-                <Text style={styles.header}>{title}</Text>
-            </Card.Footer>
-        </Card>
-    ); 
+const OrganizationCard = ({id}: {id: number}) => {
+  const organization: Organization | undefined = OrganizationsMock.find((organization: any) => organization.id === id);
+
+  if (!organization) return null;
+
+  const image = {uri: organization.getLogo()};
+
+  return (
+      <Card action={() => SheetManager.show("organization-drawer", 
+        { payload: {
+          organization: organization
+        }
+      })}>
+          <Card.Body>
+              <Image style={styles.logo} source={image}></Image>
+          </Card.Body>
+          <Card.Footer>
+              <Text style={styles.footer}>{organization.getName()}</Text>
+          </Card.Footer>
+      </Card>
+  ); 
 };
 
 const styles = StyleSheet.create({
-  header: {
+  footer: {
     borderTopWidth: 0.5,
     borderTopColor: 'lightgrey',
     fontSize: 16,
     fontWeight: 'medium',
     paddingLeft: 16,
-    height: 36,
+    paddingVertical: 8,
     alignContent: "center",
   },
   logo: {
@@ -32,4 +44,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Organization;
+export default OrganizationCard;
