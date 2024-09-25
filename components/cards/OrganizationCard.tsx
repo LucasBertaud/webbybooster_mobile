@@ -1,18 +1,30 @@
 import {Image, StyleSheet, Text} from "react-native";
 import Card from "./Card";
+import { SheetManager } from "react-native-actions-sheet";
+import { OrganizationsMock } from "@/mock/organizations_mock";
+import Organization from "@/entities/organization";
 
-const Organization = ({title, imageSrc}: {title: string, imageSrc?: string}) => {
-    const image = {uri: imageSrc};
-    return (
-        <Card>
-            <Card.Body>
-                <Image style={styles.logo} source={image}></Image>
-            </Card.Body>
-            <Card.Footer>
-                <Text style={styles.footer}>{title}</Text>
-            </Card.Footer>
-        </Card>
-    ); 
+const OrganizationCard = ({id}: {id: number}) => {
+  const organization: Organization | undefined = OrganizationsMock.find((organization: any) => organization.id === id);
+
+  if (!organization) return null;
+
+  const image = {uri: organization.getLogo()};
+
+  return (
+      <Card action={() => SheetManager.show("drawer-under-status-bar", 
+        { payload: {
+          organization: organization
+        }
+      })}>
+          <Card.Body>
+              <Image style={styles.logo} source={image}></Image>
+          </Card.Body>
+          <Card.Footer>
+              <Text style={styles.footer}>{organization.getName()}</Text>
+          </Card.Footer>
+      </Card>
+  ); 
 };
 
 const styles = StyleSheet.create({
@@ -32,4 +44,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Organization;
+export default OrganizationCard;

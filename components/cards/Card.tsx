@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native'
+import { StyleProp, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View, ViewStyle } from 'react-native'
 
 const styles = StyleSheet.create({
     card: {
@@ -25,11 +25,13 @@ const styles = StyleSheet.create({
     },
 });
 
-function Card({children}: {children: React.ReactNode}) {
+function Card({children, action}: {children: React.ReactNode, action?: () => void}) {
   return (
-    <View style={styles.card}>
-        {children}
-    </View>
+      <View style={styles.card}>
+            <TouchableOpacity onPress={action} activeOpacity={0.6}>
+                {children}
+            </TouchableOpacity>
+        </View>
   )
 }
 
