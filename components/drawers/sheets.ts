@@ -3,9 +3,11 @@ import OrganizationDrawer from './OrganizationDrawer';
 import Organization from '@/entities/organization';
 import ContactDrawer from './ContactDrawer';
 import Contact from '@/entities/contact';
+import SessionDrawer from './SessionDrawer';
 
 registerSheet('organization-drawer', OrganizationDrawer);
 registerSheet('contact-drawer', ContactDrawer);
+registerSheet('session-drawer', SessionDrawer); 
 
 declare module 'react-native-actions-sheet' {
   interface Sheets {
@@ -19,7 +21,9 @@ declare module 'react-native-actions-sheet' {
           contact: Contact;
         }
     }>;
+    'session-drawer': SheetDefinition<{ 
+    }>;
   }
 }
- 
+
 export {};
