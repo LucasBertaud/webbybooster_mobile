@@ -4,7 +4,7 @@ import Card from './Card'
 import ImportanceTag from '../tags/ImportanceTag';
 
 const styles = StyleSheet.create({
-    footer: {margin: 16},
+    footer: {marginLeft: 16, marginVertical: 8},
     date: {fontSize: 12, color: 'grey'},
 });
 

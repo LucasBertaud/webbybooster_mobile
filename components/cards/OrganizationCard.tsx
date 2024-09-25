@@ -1,7 +1,7 @@
-import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
+import {Image, StyleSheet, Text} from "react-native";
 import Card from "./Card";
 
-const Organization = ({title, imageSrc}: {title: string, imageSrc: string}) => {
+const Organization = ({title, imageSrc}: {title: string, imageSrc?: string}) => {
     const image = {uri: imageSrc};
     return (
         <Card>

@@ -19,9 +19,8 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 16,
         fontWeight: 'medium',
-        marginTop: 8,
+        marginVertical: 8,
         marginLeft: 16,
-        height: 36,
         alignContent: "center",
     },
 });

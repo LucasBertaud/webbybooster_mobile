@@ -44,13 +44,13 @@ function ImportanceTag({ importanceLevel }: { importanceLevel: ImportanceLevel }
   
   const styles = StyleSheet.create({
     tagContainer: {
-      padding: 8,
+      padding: 6,
       borderRadius: 5,
       alignSelf: 'flex-start',
       marginHorizontal: 16,
-      marginVertical: 5,
     },
     text: {
+      fontSize: 13,  
       color: 'white',
       fontWeight: 'bold',
     },
