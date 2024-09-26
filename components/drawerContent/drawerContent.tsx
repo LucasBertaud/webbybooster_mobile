@@ -55,7 +55,7 @@ export default function DrawerContent({navigation}) {
     ];
 
     return (
-        <View style={{paddingTop: 64}}>
+        <View style={{paddingTop: 32}}>
             <TitlePage title="Menu"/>
             <ScrollView>
                 {arrLink.map((link) =>

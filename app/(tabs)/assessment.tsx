@@ -10,7 +10,8 @@ import Session from "@/entities/session";
 
 const renderItem = ({ item }: { item: Session }) => (
     <View style={styles.row}>
-        <Text style={styles.cell}>{item.getSessionName()}
+        <Text style={styles.cell}>
+            {item.getSessionName()}
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => SheetManager.show("session-drawer", { payload: { session: item } })}
@@ -60,14 +61,14 @@ export default function AssessmentPage() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 10,
+        padding: 20,
     },
     header: {
         flexDirection: "row",
-        borderBottomWidth: 1,
-        borderBottomColor: "#000",
-        paddingBottom: 5,
-        marginBottom: 10,
+        borderBottomWidth: 2,
+        borderBottomColor: "#4a3228",
+        paddingBottom: 10,
+        marginBottom: 20,
     },
     headerCell: {
         width: 150,
@@ -75,20 +76,28 @@ const styles = StyleSheet.create({
         textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
+        color: "#4a3228",
     },
     row: {
         flexDirection: "row",
-        paddingVertical: 10,
+        paddingVertical: 15,
         borderBottomWidth: 1,
         borderBottomColor: "#ccc",
-        justifyContent: "center",
-        alignItems: "center",
+        backgroundColor: "#fff",
+        marginBottom: 10,
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 5,
+        elevation: 3,
     },
     cell: {
         width: 150,
         textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
+        color: "#333",
     },
     button: {
         backgroundColor: "#4a3228",
@@ -97,7 +106,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     buttonText: {
-        color: "#ba856f",
+        color: "#fff",
         textAlign: "center",
     },
     listContent: {
