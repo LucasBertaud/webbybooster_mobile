@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const Timer = () => {
+const TimerBlock = () => {
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Timer;
+export default TimerBlock;

@@ -1,7 +1,7 @@
 import {ScrollView, Text, View} from "react-native";
 import {DrawerItem} from "@react-navigation/drawer";
 import Icon from "react-native-vector-icons/Ionicons";
-import TitlePage from "@/components/Titles/TitlePage";
+import TitlePage from "@/components/titles/TitlePage";
 
 // @ts-ignore
 export default function DrawerContent({navigation}) {

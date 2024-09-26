@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, FlatList, ScrollView, TouchableOpacity } from "react-native";
-import TitlePage from "@/components/Titles/TitlePage";
-import Shortcuts from "@/components/Shortcuts";
-import Timer from "@/components/Timer";
+import TitlePage from "@/components/titles/TitlePage";
 import { SheetManager } from 'react-native-actions-sheet';
 import SessionDrawer from "@/components/drawers/SessionDrawer";
 import sessions from "@/mock/session_mock";
 import Session from "@/entities/session";
+import TimerBlock from "@/components/blocks/TimerBlock";
+import ShortcutsBlock from "@/components/blocks/ShortcutsBlock";
 
 const renderItem = ({ item }: { item: Session }) => (
     <View style={styles.row}>
@@ -31,8 +31,8 @@ export default function AssessmentPage() {
     return (
         <>
             <TitlePage title="Bilan pédagogique et financier" />
-            <Timer />
-            <Shortcuts />
+            <TimerBlock />
+            <ShortcutsBlock />
             <View style={styles.container}>
                 <ScrollView horizontal>
                     <View>

@@ -1,4 +1,4 @@
-import TitlePage from "@/components/Titles/TitlePage";
+import TitlePage from "@/components/titles/TitlePage";
 
 export default function MonitoringPage() {
     return (

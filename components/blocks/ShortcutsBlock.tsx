@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Linking } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import TitlePage from "@/components/Titles/TitlePage";
+import TitlePage from "@/components/titles/TitlePage";
 
-const Shortcuts = () => {
+const ShortcutsBlock = () => {
     const [shortcuts, setShortcuts] = useState<string[]>([]);
     const [showInput, setShowInput] = useState(false);
     const [newLink, setNewLink] = useState("");
@@ -21,31 +21,33 @@ const Shortcuts = () => {
     };
 
     return (
-        <View style={styles.container}>
+        <>
             <TitlePage title="Raccourcis" />
-            {shortcuts.map((shortcut, index) => (
-                <TouchableOpacity key={index} onPress={() => openLink(shortcut)}>
-                    <Text style={styles.shortcutText}>{shortcut}</Text>
-                </TouchableOpacity>
-            ))}
-            {showInput && (
-                <View style={styles.inputContainer}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Enter your link"
-                        placeholderTextColor="#ccc"
-                        value={newLink}
-                        onChangeText={setNewLink}
-                    />
-                    <TouchableOpacity style={styles.checkButton} onPress={addShortcut}>
-                        <Icon name="checkmark" size={24} color="white" />
+            <View style={styles.container}>
+                {shortcuts.map((shortcut, index) => (
+                    <TouchableOpacity key={index} onPress={() => openLink(shortcut)}>
+                        <Text style={styles.shortcutText}>{shortcut}</Text>
                     </TouchableOpacity>
-                </View>
-            )}
-            <TouchableOpacity style={styles.addButton} onPress={() => setShowInput(true)}>
-                <Icon name="add" size={24} color="white" />
-            </TouchableOpacity>
-        </View>
+                ))}
+                {showInput && (
+                    <View style={styles.inputContainer}>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Enter your link"
+                            placeholderTextColor="#ccc"
+                            value={newLink}
+                            onChangeText={setNewLink}
+                        />
+                        <TouchableOpacity style={styles.checkButton} onPress={addShortcut}>
+                            <Icon name="checkmark" size={24} color="white" />
+                        </TouchableOpacity>
+                    </View>
+                )}
+                <TouchableOpacity style={styles.addButton} onPress={() => setShowInput(true)}>
+                    <Icon name="add" size={24} color="white" />
+                </TouchableOpacity>
+            </View>
+        </>
     );
 };
 
@@ -106,4 +108,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Shortcuts;
+export default ShortcutsBlock;

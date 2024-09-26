@@ -1,10 +1,10 @@
-import TitlePage from "@/components/Titles/TitlePage";
+import TitlePage from "@/components/titles/TitlePage";
 import OrganizationCard from "@/components/cards/OrganizationCard";
 import React from "react";
-import Timer from "@/components/Timer";
-import Shortcuts from "@/components/Shortcuts";
 import {ScrollView} from "react-native";
 import {SheetProvider} from "react-native-actions-sheet";
+import TimerBlock from "@/components/blocks/TimerBlock";
+import ShortcutsBlock from "@/components/blocks/ShortcutsBlock";
 
 export default function OrganizationPage() {
     return (
@@ -18,8 +18,8 @@ export default function OrganizationPage() {
                     <OrganizationCard id={4}></OrganizationCard>
                     <OrganizationCard id={5}></OrganizationCard>
                     <OrganizationCard id={6}></OrganizationCard>
-                    <Timer/>
-                    <Shortcuts/>
+                    <TimerBlock/>
+                    <ShortcutsBlock/>
                 </ScrollView>
             </SheetProvider>
         </>

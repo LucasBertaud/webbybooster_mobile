@@ -1,4 +1,4 @@
-import TitlePage from "@/components/Titles/TitlePage";
+import TitlePage from "@/components/titles/TitlePage";
 import ContactCard from "@/components/cards/ContactCard";
 import React from "react";
 
