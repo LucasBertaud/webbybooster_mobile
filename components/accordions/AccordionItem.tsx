@@ -21,6 +21,7 @@ export default function AccordionItem({children, title, bgColor}: AccordionItemP
         },
         accordContainer: {
             paddingBottom: 4,
+            paddingHorizontal: 12,
         },
         accordHeader: {
             padding: 12,
@@ -30,6 +31,7 @@ export default function AccordionItem({children, title, bgColor}: AccordionItemP
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
+            borderRadius: 8,
         },
         accordTitle: {
             fontSize: 20,
