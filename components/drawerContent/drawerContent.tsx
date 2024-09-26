@@ -1,11 +1,9 @@
-import {Text, View} from "react-native";
+import {ScrollView, Text, View} from "react-native";
 import {DrawerItem} from "@react-navigation/drawer";
 import Icon from "react-native-vector-icons/Ionicons";
+import TitlePage from "@/components/Titles/TitlePage";
 
-interface DrawerContentProps {
-    icon: (props: { focused: boolean; size: number; color: string }) => React.ReactNode;
-}
-
+// @ts-ignore
 export default function DrawerContent({navigation}) {
     const defaultColor = "#ba856f";
     const activeColor = "#4a3228";
@@ -57,21 +55,22 @@ export default function DrawerContent({navigation}) {
     ];
 
     return (
-        <View style={{paddingTop: 64}}>
-            {arrLink.map((link) => <DrawerItem
-                label={({focused}) =>
-                    <Text style={focused ? {color: activeColor} : {color: defaultColor}}>{link.label}</Text>}
-                onPress={() => navigation.navigate(link.label)}
-                icon={({focused, size}) => (
-                    <Icon name={link.icon}
-                          color={focused ? activeColor : defaultColor}
-                          size={size}/>
+        <View style={{paddingTop: 32}}>
+            <TitlePage title="Menu"/>
+            <ScrollView>
+                {arrLink.map((link) =>
+                    <DrawerItem
+                        label={({focused}) =>
+                            <Text style={focused ? {color: activeColor} : {color: defaultColor}}>{link.label}</Text>}
+                        onPress={() => navigation.navigate(link.label)}
+                        icon={({focused, size}) => (
+                            <Icon name={link.icon}
+                                  color={focused ? activeColor : defaultColor}
+                                  size={size}/>
+                        )}
+                    />,
                 )}
-                inactiveBackgroundColor={"#fff"}
-                activeBackgroundColor={defaultColor}
-                inactiveTintColor={defaultColor}
-                activeTintColor={activeColor}
-            />)}
+            </ScrollView>
         </View>
     );
 }

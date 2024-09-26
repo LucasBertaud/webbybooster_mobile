@@ -43,6 +43,69 @@ const sessions: Session[] = [
         45,
         1750
     ),
+    new Session(
+        "3",
+        "Session 3",
+        "Mission 3",
+        "2023-02-01",
+        "Centre 3",
+        "Cours 3",
+        "Matière 3",
+        "Formation 3",
+        3, // John Doe
+        "Salle 3",
+        "Type 3",
+        1575,
+        175,
+        18,
+        "Intermédiaire 3",
+        "Horaires 3",
+        35,
+        45,
+        1750
+    ),
+    new Session(
+        "4",
+        "Session 4",
+        "Mission 4",
+        "2023-02-01",
+        "Centre 4",
+        "Cours 4",
+        "Matière 4",
+        "Formation 4",
+        3, // John Doe
+        "Salle 4",
+        "Type 4",
+        1575,
+        175,
+        18,
+        "Intermédiaire 4",
+        "Horaires 4",
+        35,
+        45,
+        1750
+    ),
+    new Session(
+        "5",
+        "Session 5",
+        "Mission 5",
+        "2023-02-01",
+        "Centre 5",
+        "Cours 5",
+        "Matière 5",
+        "Formation 5",
+        3, // John Doe
+        "Salle 5",
+        "Type 5",
+        1575,
+        175,
+        18,
+        "Intermédiaire 5",
+        "Horaires 5",
+        35,
+        45,
+        1750
+    ),
 ];
 
 export default sessions;
