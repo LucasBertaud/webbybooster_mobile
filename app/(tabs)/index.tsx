@@ -3,11 +3,11 @@ import {Animated} from "react-native";
 import {SheetProvider} from "react-native-actions-sheet";
 import "@/components/drawers/sheets";
 import TitlePage from "@/components/titles/TitlePage";
-import ScrollView = Animated.ScrollView;
 import TasksTrackingsBlock from "@/components/blocks/TasksTrackingsBlock";
 import ShortcutsBlock from "@/components/blocks/ShortcutsBlock";
 import TimerBlock from "@/components/blocks/TimerBlock";
 import WhoAmIBlock from "@/components/blocks/WhoAmIBlock";
+import ScrollView = Animated.ScrollView;
 
 const image = {uri: "https://blog.openclassrooms.com/wp-content/uploads/2018/05/OC.png"};
 
