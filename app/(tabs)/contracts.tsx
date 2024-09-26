@@ -3,6 +3,7 @@ import MissionCard from "@/components/cards/MissionCard";
 import AccordionItem from "@/components/accordions/AccordionItem";
 import {ScrollView, View} from "react-native";
 import ShortcutsBlock from "@/components/blocks/ShortcutsBlock";
+import TimerBlock from "@/components/blocks/TimerBlock";
 import React from "react";
 
 export default function ContractsPage() {
@@ -10,6 +11,7 @@ export default function ContractsPage() {
         <>
             <ScrollView>
                 <TitlePage title="Missions & Contrats"/>
+                <TimerBlock />
                 <ShortcutsBlock/>
                 <View style={{marginTop: 32}}>
                     <AccordionItem title="Pas commencé"

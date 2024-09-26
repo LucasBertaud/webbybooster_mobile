@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Alert, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {Agenda, DateData, AgendaEntry, AgendaSchedule} from 'react-native-calendars';
-import TestIDS from "@/app/testIDS";
-import TitlePage from "@/components/titles/TitlePage";
+import TestIDS from "@/constants/testIDS";
 
 interface State {
     itemsAgenda?: AgendaSchedule;
