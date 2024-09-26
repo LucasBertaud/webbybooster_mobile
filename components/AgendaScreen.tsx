@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Alert, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {Agenda, DateData, AgendaEntry, AgendaSchedule} from 'react-native-calendars';
-import TestIDS from "@/app/testIDS";
-import TitlePage from "@/components/titles/TitlePage";
+import testIDS from '@/constants/testIDS';
 
 interface State {
     itemsAgenda?: AgendaSchedule;
@@ -17,7 +16,7 @@ export default class AgendaScreen extends Component<State> {
         return (
             <View style={{flex: 1, width: '100%'}}>
             <Agenda
-                testID={TestIDS.agenda.CONTAINER}
+                testID={testIDS.agenda.CONTAINER}
                 items={this.state.itemsAgenda}
                 loadItemsForMonth={this.events}
                 selected={new Date().toISOString().split('T')[0]}
@@ -62,7 +61,7 @@ export default class AgendaScreen extends Component<State> {
 
         return (
             <TouchableOpacity
-                testID={TestIDS.agenda.ITEM}
+                testID={testIDS.agenda.ITEM}
                 style={[styles.item, {height: reservation.height}]}
                 onPress={() => Alert.alert(reservation.name)}
             >
