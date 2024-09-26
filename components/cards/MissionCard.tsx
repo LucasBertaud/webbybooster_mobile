@@ -6,7 +6,7 @@ import {MissionMock} from "@/mock/mission_mock";
 import Mission from "@/entities/mission";
 
 const styles = StyleSheet.create({
-    footer: {marginLeft: 16, marginVertical: 8},
+    footer: {marginVertical: 8},
     date: {fontSize: 12, color: "grey"},
 });
 
