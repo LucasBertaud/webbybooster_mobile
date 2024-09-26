@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Linking } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import TitlePage from "@/components/Titles/TitlePage";
 
@@ -16,70 +16,93 @@ const Shortcuts = () => {
         }
     };
 
+    const openLink = (link: string) => {
+        Linking.openURL(link).catch((err) => console.error("Failed to open link:", err));
+    };
+
     return (
-        <View>
-            <TitlePage title="Raccourcis"/>
+        <View style={styles.container}>
+            <TitlePage title="Raccourcis" />
+            {shortcuts.map((shortcut, index) => (
+                <TouchableOpacity key={index} onPress={() => openLink(shortcut)}>
+                    <Text style={styles.shortcutText}>{shortcut}</Text>
+                </TouchableOpacity>
+            ))}
             {showInput && (
                 <View style={styles.inputContainer}>
                     <TextInput
                         style={styles.input}
                         placeholder="Enter your link"
+                        placeholderTextColor="#ccc"
                         value={newLink}
                         onChangeText={setNewLink}
                     />
-                    <TouchableOpacity onPress={addShortcut}>
-                        <Icon name="checkmark"
-                              size={24}
-                              color="white"/>
+                    <TouchableOpacity style={styles.checkButton} onPress={addShortcut}>
+                        <Icon name="checkmark" size={24} color="white" />
                     </TouchableOpacity>
                 </View>
             )}
-            {shortcuts.map((shortcut, index) => (
-                <View key={index}>
-                    <Text style={styles.shortcutText}>{shortcut}</Text>
-                </View>
-            ))}
-            <TouchableOpacity style={styles.addButton}
-                              onPress={() => setShowInput(true)}>
-                <Icon name="add"
-                      size={24}
-                      color="white"/>
+            <TouchableOpacity style={styles.addButton} onPress={() => setShowInput(true)}>
+                <Icon name="add" size={24} color="white" />
             </TouchableOpacity>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        borderRadius: 10,
+        margin: 10,
+    },
     addButton: {
         backgroundColor: "#4a3228",
-        padding: 10,
+        padding: 20,
         width: 40,
         height: 40,
-        borderRadius: 50,
+        marginRight: 14,
+        borderRadius: 20,
         alignItems: "center",
         justifyContent: "center",
         marginVertical: 10,
         alignSelf: "flex-end",
-        marginRight: 10,
+    },
+    checkButton: {
+        backgroundColor: "#4a3228",
+        padding: 10,
+        borderRadius: 5,
+        alignItems: "center",
+        justifyContent: "center",
     },
     inputContainer: {
         flexDirection: "row",
         alignItems: "center",
-        marginVertical: 10,
+        marginVertical: 20,
+        marginLeft: 14,
+        marginRight: 14,
+        backgroundColor: "#fff",
+        borderRadius: 5,
+        padding: 5,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 5,
+        elevation: 3,
     },
     input: {
         flex: 1,
-        borderColor: "#ba856f",
+        borderColor: "#ccc",
         borderWidth: 1,
         padding: 10,
         marginRight: 10,
         borderRadius: 5,
-        color: "white",
+        color: "#333",
     },
     shortcutText: {
         marginTop: 10,
+        marginLeft: 14,
         fontSize: 18,
         color: "#ba856f",
+        textDecorationLine: "underline",
     },
 });
 
