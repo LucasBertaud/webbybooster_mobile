@@ -5,6 +5,7 @@ import { View, ScrollView, StyleSheet } from "react-native";
 import { SheetProvider } from "react-native-actions-sheet";
 import TimerBlock from "@/components/blocks/TimerBlock";
 import ShortcutsBlock from "@/components/blocks/ShortcutsBlock";
+import { OrganizationsMock } from "@/mock/organizations_mock";
 
 export default function OrganizationPage() {
     return (
@@ -14,14 +15,12 @@ export default function OrganizationPage() {
                     <TitlePage title="Organisme de formations" />
                     <TimerBlock />
                     <ShortcutsBlock />
+                    <TitlePage title="Organismes" />
                     <View style={styles.container}>
-                    <OrganizationCard id={1}></OrganizationCard>
-                    <OrganizationCard id={2}></OrganizationCard>
-                    <OrganizationCard id={3}></OrganizationCard>
-                    <OrganizationCard id={4}></OrganizationCard>
-                    <OrganizationCard id={5}></OrganizationCard>
-                    <OrganizationCard id={6}></OrganizationCard>
-                </View>
+                        {OrganizationsMock.map((organization, index) => (
+                            <OrganizationCard key={index} id={organization.getId()} />
+                        ))}
+                    </View>
             </ScrollView>
         </SheetProvider >
         </>
@@ -31,7 +30,7 @@ export default function OrganizationPage() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginLeft: 14,
-        marginRight: 14,
+        marginHorizontal: 14,
+        marginTop: 20,
     },
 });
