@@ -2,7 +2,7 @@ import React from 'react'
 import {Image, StyleSheet, Text} from "react-native";
 import Card from "./Card";
 import Contact from '@/entities/contact';
-import { ContactsMock } from '@/mock/contact_mock';
+import { ContactsMock } from '@/mock/contacts_mock';
 import { SheetManager } from 'react-native-actions-sheet';
 
 function ContactCard({id}: {id: number}) {
@@ -10,7 +10,7 @@ function ContactCard({id}: {id: number}) {
 
     if (!contact) return null;
 
-    const image = {uri: contact.getPhoto()};
+    const image = {uri: contact.getPhoto() ?? "https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg"};
   return (
     <Card action={() => SheetManager.show("contact-drawer", 
         { payload: {

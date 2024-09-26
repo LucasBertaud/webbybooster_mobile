@@ -4,7 +4,7 @@ import ActionSheet, { ActionSheetProps, SheetManager } from 'react-native-action
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Drawers } from '@/constants/Drawers';
 import Contact from '@/entities/contact';
-import { ContactsMock } from '@/mock/contact_mock';
+import { ContactsMock } from '@/mock/contacts_mock';
 
 type Session = {
   id: string;

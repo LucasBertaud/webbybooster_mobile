@@ -13,7 +13,6 @@ export default function TasksPage() {
             <ShortcutsBlock/>
             <TasksTrackingsBlock />
             <TitlePage title="Idées et pensées"/>
-
         </ScrollView>
     );
 }

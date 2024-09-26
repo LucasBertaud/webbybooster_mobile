@@ -3,7 +3,7 @@ import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import ActionSheet, { ActionSheetProps, SheetManager } from 'react-native-actions-sheet';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ContactsMock } from '@/mock/contact_mock';
+import { ContactsMock } from '@/mock/contacts_mock';
 import Contact from '@/entities/contact';
 import { Drawers } from '@/constants/Drawers';
 
