@@ -12,13 +12,15 @@ const renderItem = ({ item }: { item: Session }) => (
     <View style={styles.row}>
         <Text style={styles.cell}>
             {item.getSessionName()}
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => SheetManager.show("session-drawer", { payload: { session: item } })}
-            >
-                <Text style={styles.buttonText}>Détails</Text>
-            </TouchableOpacity>
         </Text>
+        <View style={styles.cell}>
+            <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => SheetManager.show("session-drawer", { payload: { session: item } })}
+            >
+                    <Text style={styles.buttonText}>Détails</Text>
+            </TouchableOpacity>
+        </View>
         <Text style={styles.cell}>{item.getDate()}</Text>
         <Text style={styles.cell}>{item.getTotalHours()}</Text>
         <Text style={styles.cell}>{item.getNumberOfStudents()}</Text>
@@ -29,7 +31,7 @@ const renderItem = ({ item }: { item: Session }) => (
 
 export default function AssessmentPage() {
     return (
-        <>
+        <ScrollView>
             <TitlePage title="Bilan pédagogique et financier" />
             <TimerBlock />
             <ShortcutsBlock />
@@ -37,7 +39,8 @@ export default function AssessmentPage() {
                 <ScrollView horizontal>
                     <View>
                         <View style={styles.header}>
-                            <Text style={styles.headerCell}>Nom Session</Text>
+                            <Text style={styles.headerCell}>Nom</Text>
+                            <Text style={styles.headerCell}>Session</Text>
                             <Text style={styles.headerCell}>Date</Text>
                             <Text style={styles.headerCell}>Total Heures</Text>
                             <Text style={styles.headerCell}>Nombre d'Étudiants</Text>
@@ -54,7 +57,7 @@ export default function AssessmentPage() {
                 </ScrollView>
                 <SessionDrawer />
             </View>
-        </>
+        </ScrollView>
     );
 }
 
@@ -91,6 +94,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 5,
         elevation: 3,
+        alignItems: "center",
     },
     cell: {
         width: 150,
@@ -98,12 +102,12 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         color: "#333",
+        gap: 6,
     },
     button: {
         backgroundColor: "#4a3228",
         padding: 5,
         borderRadius: 5,
-        marginLeft: 10,
     },
     buttonText: {
         color: "#fff",
