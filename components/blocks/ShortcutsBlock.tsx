@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Linking } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import TitlePage from "@/components/titles/TitlePage";
+import TodoListInput from "../inputs/TodoListInput";
+import Add from "../buttons/Add";
 
 const ShortcutsBlock = () => {
     const [shortcuts, setShortcuts] = useState<string[]>([]);
@@ -30,22 +32,14 @@ const ShortcutsBlock = () => {
                     </TouchableOpacity>
                 ))}
                 {showInput && (
-                    <View style={styles.inputContainer}>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Enter your link"
-                            placeholderTextColor="#ccc"
-                            value={newLink}
-                            onChangeText={setNewLink}
-                        />
-                        <TouchableOpacity style={styles.checkButton} onPress={addShortcut}>
-                            <Icon name="checkmark" size={24} color="white" />
-                        </TouchableOpacity>
-                    </View>
+                    <TodoListInput
+                        value={newLink}
+                        setValue={setNewLink}
+                        action={addShortcut}
+                        placeholder="Entrer un lien"
+                    />
                 )}
-                <TouchableOpacity style={styles.addButton} onPress={() => setShowInput(true)}>
-                    <Icon name="add" size={24} color="white" />
-                </TouchableOpacity>
+                <Add action={() => setShowInput(true)} />
             </View>
         </>
     );
@@ -55,47 +49,6 @@ const styles = StyleSheet.create({
     container: {
         borderRadius: 10,
         margin: 10,
-    },
-    addButton: {
-        backgroundColor: "#4a3228",
-        padding: 8,
-        marginRight: 14,
-        borderRadius: 100,
-        alignItems: "center",
-        justifyContent: "center",
-        marginVertical: 10,
-        alignSelf: "flex-end",
-    },
-    checkButton: {
-        backgroundColor: "#4a3228",
-        padding: 10,
-        borderRadius: 5,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    inputContainer: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginVertical: 20,
-        marginLeft: 14,
-        marginRight: 14,
-        backgroundColor: "#fff",
-        borderRadius: 5,
-        padding: 5,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 5,
-        elevation: 3,
-    },
-    input: {
-        flex: 1,
-        borderColor: "#ccc",
-        borderWidth: 1,
-        padding: 10,
-        marginRight: 10,
-        borderRadius: 5,
-        color: "#333",
     },
     shortcutText: {
         marginTop: 10,

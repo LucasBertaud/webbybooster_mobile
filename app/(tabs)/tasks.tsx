@@ -3,6 +3,8 @@ import TitlePage from "@/components/titles/TitlePage";
 import { ScrollView } from "react-native";
 import TimerBlock from "@/components/blocks/TimerBlock";
 import ShortcutsBlock from "@/components/blocks/ShortcutsBlock";
+import TodoListInput from "@/components/inputs/TodoListInput";
+import IdeasAndThoughtsBlock from "@/components/blocks/IdeasAndThoughtsBlock";
 
 export default function TasksPage() {
 
@@ -12,7 +14,7 @@ export default function TasksPage() {
             <TimerBlock/>
             <ShortcutsBlock/>
             <TasksTrackingsBlock />
-            <TitlePage title="Idées et pensées"/>
+            <IdeasAndThoughtsBlock />
         </ScrollView>
     );
 }
