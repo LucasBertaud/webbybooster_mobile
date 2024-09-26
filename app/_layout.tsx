@@ -13,7 +13,7 @@ import BillingPage from "@/app/(tabs)/billing";
 import AssessmentPage from "@/app/(tabs)/assessment";
 import OrganizationPage from "@/app/(tabs)/organization";
 import IntermediaryPage from "@/app/(tabs)/intermediary";
-import ContactPage from "@/app/(tabs)/contact";
+import ContactPage from "@/app/(tabs)/contacts";
 import StockPage from "@/app/(tabs)/stock";
 import DocumentsPage from "@/app/(tabs)/documents";
 import ApplicationPage from "@/app/(tabs)/application";
